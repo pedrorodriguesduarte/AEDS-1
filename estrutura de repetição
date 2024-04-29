@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+float calcularMedia(int notas[], int tamanho) {
+  int soma = 0;
+  for (int i = 0; i < tamanho; i++) {
+    soma += notas[i];
+  }
+  return (float)soma / tamanho;
+}
+
+void verificarAprovacao(float media) {
+  if (media >= 6.0) {
+    printf("PARABÉNS, VOCÊ FOI APROVADO!\n");
+  } else {
+    printf("INFELIZMENTE, VOCÊ FOI REPROVADO.\n");
+  }
+}
+
+int main() {
+  int quantidadeNotas;
+
+  printf("QUANTAS NOTAS DESEJA INSERIR? ");
+  scanf("%d", &quantidadeNotas);
+
+  int notas[quantidadeNotas];
+
+  printf("INSIRA AS %d NOTAS:\n", quantidadeNotas);
+  for (int i = 0; i < quantidadeNotas; i++) {
+    printf("NOTA %d: ", i + 1);
+    scanf("%d", &notas[i]);
+  }
+
+  float media = calcularMedia(notas, quantidadeNotas);
+
+  verificarAprovacao(media);
+
+  return 0;
+}
