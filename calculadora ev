@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int areaQuadrado(int lado) { return lado * lado; }
+
+int areaCirculo(int raio) { return (raio * raio) * 3, 14; }
+
+int areaTriangulo(int base, int altura) { return (base * altura) / 2; }
+
+int main() {
+  int op, lado, raio, base, altura;
+
+  printf("1. CALCULE A AREA DO QUADRADO \n");
+  printf("2. CALCULE A AREA DO CIRCULO \n ");
+  printf("3 CALCULE A AREA DO TRIANGULO \n");
+  printf("SAIR \n");
+  printf("DIGITE A OPCAO DESEJADA : ");
+  scanf("%d", &op);
+  
+  switch (op) {
+
+  case 1:
+    printf("DIGITE O LADO DO QUADRAO : ");
+    scanf("%d", &lado);
+    areaQuadrado(lado);
+    printf("A AREA DO QUADRADO E %d", areaQuadrado(lado));
+    break;
+
+  case 2:
+    printf("DIGITE O VALOR DO RAIO : ");
+    scanf("%d", &raio);
+    areaCirculo(raio);
+    printf("A AREA DO CIRCULO E %d", areaCirculo(raio));
+    break;
+
+  case 3:
+    printf("DIGITE O VALOR DA BASE : ");
+    scanf("%d", &base);
+    printf("DIGITE O VALOR DA ALTURA : ");
+    scanf("%d", &altura);
+    areaTriangulo(base, altura);
+    printf("A AREA DO TRIANGULO E %d", areaTriangulo(base, altura));
+    break;
+
+  case 4:
+    printf("PROGRAMA ENCERRADO ");
+    return 0;
+    break;
+
+  default:
+    printf("OPCAO DE MONGOLOIDE POIS NAO EXISTE ESSA OPCAO PARA SER ESCOLIDA ");
+    break;
+  }
+}
