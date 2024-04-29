@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main () {
+
+  int idade, altura, sexo;
+
+  printf("Digite a idade do candidato : ");
+  scanf("%d", &idade);
+  printf("Digite a altura do candidato : ");
+  scanf("%d", &altura);
+  printf("1. Feminino\n2. Masculino\nDigite o sexo do candidato: ");
+  scanf("%d", &sexo);
+
+  if (altura >= 180 && idade > 16) {
+    if (sexo == 1) {
+      printf("Apto a jogar no time Juvenil Feminino de basquete");
+    } else if (sexo == 2) {
+      printf("Apto a jogar no time Juvenil Masculino de basquete");
+    } else {
+      printf("Sexo invalido, por favor insira 1 para feminino ou 2 para "
+             "masculino");
+    }
+  } else {
+    printf("Não apto a jogar no time de basquete");
+  }
+}
+
