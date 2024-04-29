@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int analisarPalindromo(char proprio[]) {
+  int comprimento, g, palindromo = 1;
+  comprimento = strlen(proprio);
+  g = comprimento - 1;
+
+  for (int v = 0; v < comprimento; v++) {
+    if (proprio[v] != proprio[g]) {
+      palindromo = 0;
+    }
+    g--;
+  }
+  return palindromo;
+}
+
+int main() {
+
+  char saraiva[35];
+  int palindrome;
+
+  printf(" DIGITE A PALAVRA PARA VERMOS SE E OU NAO UMA PALINDROMO \n");
+  scanf(" %s", saraiva);
+
+  palindrome = analisarPalindromo(saraiva);
+  if (palindrome == 1) {
+    puts("E PALINDROME FDP VAMO CARAI \n");
+  } else {
+    puts("VOCE E IDIOTA Z VAI PARA CASA E CHORA SUA MAE TEM VERGONHA DE VOCE "
+         "DISNARA");
+  }
+}
