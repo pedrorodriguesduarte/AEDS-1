@@ -1,32 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-//função recursiva padrão
-int fatorialRecursivo(int n){
-	//if else
-	if (n ==0 || n ==1){
-		return 1;
-	} else{
-		//chamada recursiva
-		return n = fatorialRecursivo(n-1);
-	}
+// FunÃ§Ã£o recursiva para calcular o fatorial
+int fatorialRecursivo(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * fatorialRecursivo(n - 1);
+    }
 }
 
+// FunÃ§Ã£o iterativa para calcular o fatorial
+int fatorialComLoop(int n) {
+    int resultado = 1;
 
-//Solução Iterativa
-int fatorialComLoop(int n){
-	int resultado = 1;
-	//Utilizando um loop for para ,ultiplicar os números de 1 a n
-	for(int i = 1; i<=n; i++){
-		resultado *= i;
-	}
-	return resultado;
+    for (int i = 1; i <= n; i++) {
+        resultado *= i;
+    }
+
+    return resultado;
 }
-
 
 int main(void) {
-	int numero = 5;
-	printf("O fatorial de %d é: %d\n", numero, fatorialRecursivo);
-	return 0;
+    int numero;
+
+    // ValidaÃ§Ã£o de entrada
+    printf("Digite um nÃºmero inteiro nÃ£o negativo: ");
+    while (scanf("%d", &numero) != 1 || numero < 0) {
+        printf("Valor invÃ¡lido. Digite novamente: ");
+    }
+
+    printf("O fatorial de %d (recursivo) Ã©: %d\n", numero, fatorialRecursivo(numero));
+    printf("O fatorial de %d (iterativo) Ã©: %d\n", numero, fatorialComLoop(numero));
+
+    return 0;
 }
