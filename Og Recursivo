@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    if (N < 0 || N > 10) {
+        printf("Número fora do intervalo permitido (0-10).\n");
+        return 1;
+    }
+
+    // Mão esquerda
+    if (N <= 5) {
+        for (int i = 0; i < N; i++) {
+            printf("I");
+        }
+        if (N == 0) {
+            printf("*");
+        }
+        printf("\n");
+    } else {
+        for (int i = 0; i < 5; i++) {
+            printf("I");
+        }
+        printf("\n");
+    }
+
+    // Mão direita
+    if (N <= 5) {
+        printf("*\n");
+    } else {
+        for (int i = 0; i < (N - 5); i++) {
+            printf("I");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
