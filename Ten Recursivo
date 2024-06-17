@@ -4,15 +4,15 @@ int main() {
     char resultado;
     int vitorias = 0;
 
-    // Ler os resultados dos 6 jogos
+    // Leitura dos resultados dos seis jogos
     for (int i = 0; i < 6; i++) {
         scanf(" %c", &resultado);
         if (resultado == 'V') {
-            vitorias += 1;
+            vitorias++;
         }
     }
 
-    // Determinar o grupo com base no número de vitórias
+    // Determinação do grupo com base no número de vitórias
     if (vitorias == 5 || vitorias == 6) {
         printf("1\n");
     } else if (vitorias == 3 || vitorias == 4) {
@@ -25,3 +25,4 @@ int main() {
 
     return 0;
 }
+
